@@ -1,6 +1,8 @@
 import React from 'react';
 import { login, logout, isLoggedIn } from '../utils/AuthService';
-import { AppBar, Toolbar, Typography, Button } from '@material-ui/core';
+import { AppBar, Toolbar, Typography, Link, Button } from '@material-ui/core';
+
+import '../App.css';
 
 const Nav = () => {
     return (
@@ -8,16 +10,16 @@ const Nav = () => {
             <AppBar position="static">
                 <Toolbar>
                     <Typography variant="h6">
-                        MiniFlix
+                        <Link href="/" className="a">MiniFlix</Link>
                     </Typography>
-                    <Button color="inherit" className="ml-auto">All Movies</Button>
+                    <Link href="/" className="ml-auto mr-3 a">All Movies</Link>
 
                     {
-                        (isLoggedIn()) ? <Button color="inherit">Upload Videos</Button> : ''
+                        (isLoggedIn()) ? <Link href="/upload" className="a mx-3">Upload Videos</Link> : ''
                     }
 
                     {
-                        (isLoggedIn()) ? <Button color="inherit" onClick={logout()}>Logout</Button> : <Button color="inherit" onClick={login}>Login</Button> 
+                        (isLoggedIn()) ? <Link className="a cursor-pointer" onClick={logout}>Logout</Link> : <Link className="a cursor-pointer" onClick={login}>Login</Link> 
                     }
                 </Toolbar>
             </AppBar>
