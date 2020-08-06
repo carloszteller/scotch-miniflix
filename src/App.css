@@ -11,6 +11,9 @@
 /* Navbar */
 .a{ color: white !important; }
 
+/* Videos */
+.video { width: 100%; height: auto; }
+
 /* DELETE! */
 .bg-red { background-color: red !important; }
 
